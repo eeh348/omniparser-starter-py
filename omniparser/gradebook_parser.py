@@ -1,8 +1,7 @@
+#gradebook_parser.py
 
 import pandas
-
 import statistics
-
 import os
 
 
@@ -14,10 +13,6 @@ def calculate_average_grade_from_csv(my_csv_filepth):
     grades = [r["final_grade"] for r in rows]
     avg_grade = statistics.mean(grades)
 
-    #breakpoint()
-
-    #grade
-
     return avg_grade
 
 if __name__ == "__main__":
@@ -27,6 +22,8 @@ if __name__ == "__main__":
     gradebook_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "gradebook_2019.csv")
 
     avg = calculate_average_grade_from_csv(gradebook_filepath)
+
+    print(gradebook_filepath)
 
     print(avg)
 
